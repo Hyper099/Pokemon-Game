@@ -9,8 +9,8 @@ public class StartGame {
             System.out.println("Hi! Trainer, let us begin your journey!");
             System.out.println("Pick a starter Pokémon: ");
 
-            for (PokemonStats pokemon : starters.pokemons) {
-                System.out.println(pokemon.getName());
+            for (int i = 0; i < starters.pokemons.length; i++) {
+                System.out.println((i + 1) + "." + starters.pokemons[i].getName());
             }
             System.out.print("Enter the name of the Pokémon you want: ");
 
