@@ -23,6 +23,8 @@ public class StartGame {
             } else if (StarterChoice.equals(Starters.pokemons[2].getName())) {
                 PlayerPokemon = Starters.pokemons[2].getName();
             }
+
+            System.out.println(Starters.pokemons[0].moves.fire("flamethrower", "flower", "energy", "flamethower"));
         }
         return PlayerPokemon;
     }
