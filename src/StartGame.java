@@ -28,11 +28,6 @@ public class StartGame {
             if (selectedPokemon != null) {
                 System.out.println(
                         "You selected: " + selectedPokemon.getName() + " (" + selectedPokemon.getType() + " type)");
-                System.out.println("Moves:");
-                for (int i = 0; i < 4; i++) {
-                    Move move = selectedPokemon.getMoves().getMove(i);
-                    System.out.println(move.getName() + " (Power: " + move.getPower() + ")");
-                }
                 return selectedPokemon;
             } else {
                 System.out.println("Invalid choice. Please try again.");

@@ -1,13 +1,12 @@
 public class Main {
+
    public static void main(String[] args) {
       StartGame game = new StartGame();
       PokemonStats selectedPokemon = game.selectStarterPokemon();
-      Move move = selectedPokemon.getMoves().getMove(1);
-      Menu menu = new Menu();
+      UserChoice userChoice = new UserChoice();
 
-      // Further game logic can use the selectedPokemon object
-      System.out.println("Let's start your adventure with " + selectedPokemon.getName() + "!");
-      menu.displayMenu();
+      System.out.println("\nLet's start your adventure with " + selectedPokemon.getName() + "!\n");
 
+      userChoice.userchoice(selectedPokemon);
    }
 }
