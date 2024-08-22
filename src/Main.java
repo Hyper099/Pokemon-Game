@@ -7,8 +7,8 @@ public class Main {
       Menu menu = new Menu();
 
       System.out.println("\nLet's start your adventure with " + selectedPokemon.getName() + "!\n");
-      menu.displayMenu();
-      menu.menuActions();
+      
+      menu.menuActions(selectedPokemon);
 
    }
 }

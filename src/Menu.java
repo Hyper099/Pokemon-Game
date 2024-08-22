@@ -6,7 +6,7 @@ public class Menu {
    private Scanner scanner = new Scanner(System.in);
 
    public void displayMenu() {
-      System.out.println("Select the actions to perform (Select Index): ");
+      System.out.println("\nDisplaying Available Actions in the Menu : ");
       for (int i = 0; i < actions.length; i++) {
          System.out.println((i + 1) + ". " + actions[i]);
       }
@@ -16,18 +16,41 @@ public class Menu {
       return (scanner.nextInt());
    }
 
-   public void menuActions() {
-      switch (getChoice()) {
-         case 1 -> System.out.println("You chose to Fight");
-         case 2 -> System.out.println("You chose to Display Pokemon Info");
-         case 3 -> {
-            System.out.println("You chose to Exit");
-            scanner.close();
-            System.exit(0);
-         }
-         default -> {
-            System.out.println("Invalid Choice");
-            menuActions();
+   public void menuActions(PokemonStats selectedPokemon) {
+
+      boolean continuePlaying = true;
+      while (continuePlaying) {
+
+         displayMenu();
+
+         System.out.print("Select your action (select index) : ");
+
+         switch (getChoice()) {
+            case 1 -> System.out.println("You chose to Fight");
+            case 2 -> {
+               System.out.println("\nYou chose to Display Pokemon Info\n");
+               System.out.println("Displaying selected Pokémon info:");
+               System.out.println("Name: " + selectedPokemon.getName());
+               System.out.println("Type: " + selectedPokemon.getType());
+               System.out.println("HP: " + selectedPokemon.getHP());
+               System.out.println("Attack: " + selectedPokemon.getAttack());
+               System.out.println("Defense: " + selectedPokemon.getDefense());
+               System.out.println("Speed: " + selectedPokemon.getSpeed());
+               System.out.println("Moves:");
+
+               for (int i = 0; i < selectedPokemon.getMoves().getSize(); i++) {
+                  Move move = selectedPokemon.getMoves().getMove(i);
+                  System.out.println(move.getName() + " (Power: " + move.getPower() + ")");
+               }
+            }
+            case 3 -> {
+               System.out.println("You chose to Exit");
+               scanner.close();
+               continuePlaying = false;
+            }
+            default -> {
+               System.out.println("Invalid Choice");
+            }
          }
       }
    }
