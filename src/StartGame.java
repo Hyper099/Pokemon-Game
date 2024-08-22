@@ -2,30 +2,42 @@ import java.util.Scanner;
 
 public class StartGame {
 
-    String StarterPokemon() {
-        String PlayerPokemon = "tatti";
+    public PokemonStats selectStarterPokemon() {
         try (Scanner scanChoice = new Scanner(System.in)) {
-            PokemonArray Starters = new PokemonArray();
-            String StarterChoice;
-            System.out.println("Hi! trainer let us begin your journey!");
-            System.out.println("Pick a starter pokemon : ");
-            System.out.println(Starters.pokemons[0].getName());
-            System.out.println(Starters.pokemons[1].getName());
-            System.out.println(Starters.pokemons[2].getName());
-            System.out.print("Enter the name of the pokemon you want : ");
+            PokemonArray starters = new PokemonArray();
+            String starterChoice;
+            System.out.println("Hi! Trainer, let us begin your journey!");
+            System.out.println("Pick a starter Pokémon: ");
 
-            StarterChoice = scanChoice.nextLine();
+            for (PokemonStats pokemon : starters.pokemons) {
+                System.out.println(pokemon.getName());
+            }
+            System.out.print("Enter the name of the Pokémon you want: ");
 
-            if (StarterChoice.equals(Starters.pokemons[0].getName())) {
-                PlayerPokemon = Starters.pokemons[0].getName();
-            } else if (StarterChoice.equals(Starters.pokemons[1].getName())) {
-                PlayerPokemon = Starters.pokemons[1].getName();
-            } else if (StarterChoice.equals(Starters.pokemons[2].getName())) {
-                PlayerPokemon = Starters.pokemons[2].getName();
+            starterChoice = scanChoice.nextLine();
+
+            PokemonStats selectedPokemon = null;
+
+            for (PokemonStats pokemon : starters.pokemons) {
+                if (starterChoice.equalsIgnoreCase(pokemon.getName())) {
+                    selectedPokemon = pokemon;
+                    break;
+                }
             }
 
-            System.out.println(Starters.pokemons[0].moves.fire("flamethrower", "flower", "energy", "flamethower"));
+            if (selectedPokemon != null) {
+                System.out.println(
+                        "You selected: " + selectedPokemon.getName() + " (" + selectedPokemon.getType() + " type)");
+                System.out.println("Moves:");
+                for (int i = 0; i < 4; i++) {
+                    Move move = selectedPokemon.getMoves().getMove(i);
+                    System.out.println(move.getName() + " (Power: " + move.getPower() + ")");
+                }
+                return selectedPokemon;
+            } else {
+                System.out.println("Invalid choice. Please try again.");
+                return selectStarterPokemon(); // Recursively call the method again if the input is invalid.
+            }
         }
-        return PlayerPokemon;
     }
 }

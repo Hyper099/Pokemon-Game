@@ -4,17 +4,17 @@ class PokemonStats {
    private final int hp;
    private final int attack;
    private final int defense;
-   private final int spattack;
-   Moves moves = new Moves();
+   private final int speed;
+   private final Moves moves;
 
-   public PokemonStats(String name, String type, int hp, int attack, int defense, int spattack, Moves moves) {
+   public PokemonStats(String name, String type, int hp, int attack, int defense, int speed, Moves moves) {
       this.name = name;
       this.type = type;
       this.hp = hp;
       this.attack = attack;
       this.defense = defense;
-      this.spattack = spattack;
-      moves.fire(type, type, type, type);
+      this.speed = speed;
+      this.moves = moves;
    }
 
    public String getName() {
@@ -37,8 +37,11 @@ class PokemonStats {
       return defense;
    }
 
-   public int getSpAttack() {
-      return spattack;
+   public int getSpeed() {
+      return speed;
    }
 
+   public Moves getMoves() {
+      return moves;
+   }
 }
