@@ -6,9 +6,8 @@ public class Main {
       PokemonStats selectedPokemon = game.selectStarterPokemon();
       Menu menu = new Menu();
 
-      System.out.println("\nLet's start your adventure with " + selectedPokemon.getName() + "!\n");
-      
-      menu.menuActions(selectedPokemon);
+      System.out.println("\nLet's start your adventure with " + selectedPokemon.getName() + "!");
 
+      menu.menuActions(selectedPokemon);
    }
 }
