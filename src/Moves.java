@@ -12,4 +12,8 @@ public class Moves {
          return null;
       }
    }
+
+   public int getSize() {
+      return moves.length;
+   }
 }
