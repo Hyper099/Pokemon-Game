@@ -2,45 +2,35 @@ import java.util.Random;
 import java.util.Scanner;
 
 import PokemonData.PokemonStats;
-import PokemonMoves.Move;
 
 public class Fight {
-    int Damage;
-    private PokemonStats selectedPokemon;
-    private PokemonStats ComputerPokemon;
+    private int damage;
+    private final PokemonStats selectedPokemon;
+    private final PokemonStats computerPokemon;
 
-    public Fight(PokemonStats selectedPokemon, PokemonStats ComputerPokemon) {
+    public Fight(PokemonStats selectedPokemon, PokemonStats computerPokemon) {
         this.selectedPokemon = selectedPokemon;
-        this.ComputerPokemon = ComputerPokemon;
+        this.computerPokemon = computerPokemon;
     }
 
-    public String getName() {
-        return selectedPokemon.getName();
-    }
-
-    // call a function always with move (coz move is single) (and moves is a array
-    // of move)
-    public void getMove(int index) {
-        Move playerMove = selectedPokemon.getMoves().getMove(index); // use this getter to get move.
-        System.out.println(playerMove.getName());
-    }
-
-    public void Stuff() {
+    public void performAction() {
         System.out.println(selectedPokemon.getAttack());
-        System.out.println(ComputerPokemon.getSpeed());
-
+        System.out.println(computerPokemon.getSpeed());
     }
 
-    void fight() {
+    public void fight() {
         Scanner scanMove = new Scanner(System.in);
-        Random CompMove = new Random();
+        Random compMove = new Random();
 
-        int PlayerHP = selectedPokemon.getHP();
-        int ComputerHP = ComputerPokemon.getHP();
+        // Storing HP of playerPokemon and computerPokemon
+        int playerPokemonHP = selectedPokemon.getHP();
+        int computerPokemonHP = computerPokemon.getHP();
+
         boolean isPlaying = true;
-        int selectedMove;
-        int UserMovePower;
-        int ComputerMovePower;
+        int selectedMove = 0;
+        int userMovePower = 0;
+        int computerMovePower;
+
         while (isPlaying) {
             System.out.println("Select a move to attack: ");
             System.out.println(selectedPokemon.getMoves().getMove(0));
@@ -51,24 +41,12 @@ public class Fight {
             selectedMove = scanMove.nextInt();
 
             switch (selectedMove) {
-                case 1 -> {
-                    UserMovePower = selectedPokemon.getMoves().getMove(0).getPower();
-
-                }
-                case 2 -> {
-                    UserMovePower = selectedPokemon.getMoves().getMove(1).getPower();
-                }
-                case 3 -> {
-                    UserMovePower = selectedPokemon.getMoves().getMove(2).getPower();
-                }
-                case 4 -> {
-                    UserMovePower = selectedPokemon.getMoves().getMove(3).getPower();
-                }
+                case 1 -> userMovePower = selectedPokemon.getMoves().getMove(0).getPower();
+                case 2 -> userMovePower = selectedPokemon.getMoves().getMove(1).getPower();
+                case 3 -> userMovePower = selectedPokemon.getMoves().getMove(2).getPower();
+                case 4 -> userMovePower = selectedPokemon.getMoves().getMove(3).getPower();
                 default -> System.out.println("Invalid choice");
             }
-
         }
-
     }
-
 }

@@ -3,24 +3,20 @@ import PokemonData.PokemonStats;
 public class Main {
 
    // Notes:
-   // INTIALIZE SCANNER WHEREVER USING AS PRIVATE
+   // Initialize scanner wherever using as private
 
    public static void main(String[] args) {
 
       StartGame game = new StartGame();
 
       PokemonStats selectedPokemon = game.selectStarterPokemon();
-      PokemonStats ComputerPokemon = game.ComputerPokemon();
+      PokemonStats computerPokemon = game.getComputerPokemon();
       Menu menu = new Menu();
-      PlayerProfile player = new PlayerProfile(selectedPokemon);
 
       System.out.println("\nLet's start your adventure with " + selectedPokemon.getName() + "!");
 
-      menu.menuActions(selectedPokemon, ComputerPokemon);
+      menu.menuActions(selectedPokemon, computerPokemon);
 
-      // plyaer controls can be done this way now
-      player.getMove(1);
-      player.getName();
-
+      System.out.println("\nThankyou for Playing the game!\n");
    }
 }

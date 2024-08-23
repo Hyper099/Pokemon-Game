@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 import PokemonData.PokemonStats;
@@ -22,16 +23,11 @@ public class StartGame {
          starterChoice = scanChoice.nextLine();
 
          for (PokemonStats pokemon : starters.pokemons) {
-            if (starterChoice.equalsIgnoreCase(pokemon.getName())) { // equals to the name of the Pokemon without
-                                                                     // checking for the upper or lower case
+            if (starterChoice.equalsIgnoreCase(pokemon.getName())) {
                selectedPokemon = pokemon;
-
                break;
             }
          }
-         // BREAKDOWN UNDERSTANING OF ABOVE FOR LOOP
-         // for(DATATYPE {which is PokemonStats here} ELEMENT NAME {which we are using to
-         // loop in it}: ARRAY NAME )
 
          if (selectedPokemon != null) {
             System.out.println(
@@ -40,14 +36,16 @@ public class StartGame {
             System.out.println("Invalid choice. Please try again.");
          }
       }
-      return selectedPokemon; // same DATATYPE as PokemonStats
+      return selectedPokemon;
    }
 
-   public PokemonStats ComputerPokemon() {
+   public PokemonStats getComputerPokemon() {
+      Random random = new Random();
 
       PokemonArray starters = new PokemonArray();
-      PokemonStats ComputerPokemon = starters.pokemons[1];
+      int randomIndex = random.nextInt(starters.pokemons.length);
+      PokemonStats computerPokemon = starters.pokemons[randomIndex];
 
-      return ComputerPokemon;
+      return computerPokemon;
    }
 }
