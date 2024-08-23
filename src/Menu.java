@@ -31,11 +31,11 @@ public class Menu {
          System.out.print("Select your action (select index) : ");
 
          switch (getChoice()) {
-            case 1 ->{
+            case 1 -> {
                System.out.println("Commencing Fight.");
                Fight fight = new Fight(selectedPokemon, ComputerPokemon);
                fight.Stuff();
-            } 
+            }
             case 2 -> {
                System.out.println("\nYou chose to Display Pokemon Info\n");
                System.out.println("Displaying selected Pokémon info:");
