@@ -7,10 +7,12 @@ class PokemonArray {
    public PokemonStats[] pokemons = new PokemonStats[3];
 
    public PokemonArray() {
+      // CALL OBJECTS OF POKEMON
       Charmander charmander = new Charmander();
       Bulbasaur bulbasaur = new Bulbasaur();
       Squirtle squirtle = new Squirtle();
 
+      // ASSIGN MOVES TO THE POKEMON OBJETS
       Moves charmanderMoves = charmander.getMoves();
       Moves bulbasaurMoves = bulbasaur.getMoves();
       Moves squirtleMoves = squirtle.getMoves();

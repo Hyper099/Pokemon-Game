@@ -1,6 +1,8 @@
 package PokemonMoves;
 
+// a single move which will later be stores in the moves array.
 public class Move {
+
    private final String name;
    private final int power;
 
