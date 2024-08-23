@@ -1,4 +1,3 @@
-
 import PokemonData.PokemonStats;
 
 public class Main {
