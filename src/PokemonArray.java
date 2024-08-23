@@ -6,6 +6,7 @@ class PokemonArray {
       Move scratch = new Move("Scratch", 30);
       Move growl = new Move("Growl", 0);
       Move fireFang = new Move("Fire Fang", 65);
+      
       Moves charmanderMoves = new Moves(ember, scratch, growl, fireFang);
 
       Move vineWhip = new Move("Vine Whip", 45);
