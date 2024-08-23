@@ -17,6 +17,7 @@ class PokemonArray {
             Moves bulbasaurMoves = bulbasaur.getMoves();
             Moves squirtleMoves = squirtle.getMoves();
 
+            // SHORTEN THIS REPETION THIS CODE
             pokemons[0] = new PokemonStats(
                         charmander.getName(),
                         charmander.getType(),
@@ -43,5 +44,21 @@ class PokemonArray {
                         squirtle.getDefense(),
                         squirtle.getSpeed(),
                         squirtleMoves);
+            // pokemons[0] = createPokemonStats(charmander);
+            // pokemons[1] = createPokemonStats(bulbasaur);
+            // pokemons[2] = createPokemonStats(squirtle);
+
       }
+
+      // private PokemonStats createPokemonStats(PokemonStats pokemon) {
+      // Moves moves = pokemon.getMoves();
+      // return new PokemonStats(
+      // pokemon.getName(),
+      // pokemon.getType(),
+      // pokemon.getHP(),
+      // pokemon.getAttack(),
+      // pokemon.getDefense(),
+      // pokemon.getSpeed(),
+      // moves);
+      // }
 }

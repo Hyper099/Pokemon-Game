@@ -20,11 +20,15 @@ public class StartGame {
          starterChoice = scanChoice.nextLine();
 
          for (PokemonStats pokemon : starters.pokemons) {
-            if (starterChoice.equalsIgnoreCase(pokemon.getName())) {
+            if (starterChoice.equalsIgnoreCase(pokemon.getName())) { // equals to the name of the Pokemon without
+                                                                     // checking for the upper or lower case
                selectedPokemon = pokemon;
                break;
             }
          }
+         // BREAKDOWN UNDERSTANING OF ABOVE FOR LOOP
+         // for(DATATYPE {which is PokemonStats here} ELEMENT NAME {which we are using to
+         // loop in it}: ARRAY NAME )
 
          if (selectedPokemon != null) {
             System.out.println(
@@ -33,6 +37,6 @@ public class StartGame {
             System.out.println("Invalid choice. Please try again.");
          }
       }
-      return selectedPokemon;
+      return selectedPokemon; // same DATATYPE as PokemonStats
    }
 }
