@@ -7,7 +7,7 @@ public class Menu {
    // Add all the menu actions in this list
    String[] actions = new String[] { "Fight", "Display Pokemon Info", "Exit" };
 
-   private Scanner scanner = new Scanner(System.in);
+   private final Scanner scanner = new Scanner(System.in);
 
    public void displayMenu() {
       System.out.println("\nDisplaying available actions in the menu:");
@@ -29,7 +29,7 @@ public class Menu {
       switch (getChoice()) {
          case 1 -> {
             System.out.println("Commencing fight.");
-            Fight fight = new Fight(selectedPokemon, computerPokemon); 
+            Fight fight = new Fight(selectedPokemon, computerPokemon);
             fight.fight();
          }
          case 2 -> {
@@ -52,14 +52,12 @@ public class Menu {
          }
          case 3 -> {
             System.out.println("Exiting the game.");
-            scanner.close();
 
          }
          default -> {
             System.out.println("Invalid choice! Try again.");
             menuActions(selectedPokemon, computerPokemon);
          }
-
       }
    }
 }

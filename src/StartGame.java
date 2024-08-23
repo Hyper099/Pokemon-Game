@@ -4,7 +4,7 @@ import java.util.Scanner;
 import PokemonData.PokemonStats;
 
 public class StartGame {
-   private Scanner scanChoice = new Scanner(System.in);
+   private final Scanner scanChoice = new Scanner(System.in);
 
    public PokemonStats selectStarterPokemon() {
       PokemonArray starters = new PokemonArray();
