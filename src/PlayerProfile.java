@@ -1,17 +1,21 @@
-import PokemonData.Charmander;
+import PokemonMoves.Move;
 
 public class PlayerProfile {
-   public Charmander[] array = new Charmander[1];
+   private PokemonStats selectedPokemon; // inserting selected pokemon as player
 
-   public void addCharmander() {
-      array[0] = new Charmander();
+   public PlayerProfile(PokemonStats selectedPokemon) {
+      this.selectedPokemon = selectedPokemon;
    }
 
-   public void displayName() {
-      System.out.println(array[0].getName());
+   public void getName() {
+      System.out.println("Player 1: " + selectedPokemon.getName());
    }
 
-   public void move1() {
-      System.out.println(array[0].getMoves());
+   // call a function always with move (coz move is single) (and moves is a array
+   // of move)
+   public void getMove(int index) {
+      Move playerMove = selectedPokemon.getMoves().getMove(index); // use this getter to get move.
+      System.out.println(playerMove.getName());
    }
+
 }

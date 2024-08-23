@@ -2,6 +2,8 @@ import PokemonMoves.Move;
 import java.util.Scanner;
 
 public class Menu {
+
+   // ADD ALL THE MENU ACTIONS IN THIS LIST
    String actions[] = new String[] { "Fight", "Display Pokemon Info", "Exit" };
 
    private Scanner scanner = new Scanner(System.in);

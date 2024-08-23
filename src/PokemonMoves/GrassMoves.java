@@ -1,5 +1,7 @@
 package PokemonMoves;
 
+//LIST OF ALL GRASSMOVES SHOULD BE ADDED HERE
+
 public class GrassMoves {
     public static final Move Vine_whip = new Move("Vine Whip", 45);
     public static final Move Tackle = new Move("Tackle", 40);

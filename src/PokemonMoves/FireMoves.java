@@ -1,5 +1,7 @@
 package PokemonMoves;
 
+//LIST OF ALL FIREMOVES SHOULD BE ADDED HERE
+
 public class FireMoves {
    public static final Move Ember = new Move("Ember", 40);
    public static final Move Scratch = new Move("Scratch", 30);

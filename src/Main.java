@@ -1,18 +1,23 @@
 public class Main {
 
+   // Notes:
+   // INTIALIZE SCANNER WHEREVER USING AS PRIVATE
+
    public static void main(String[] args) {
 
       StartGame game = new StartGame();
       PokemonStats selectedPokemon = game.selectStarterPokemon();
       Menu menu = new Menu();
-      // PlayerProfile player1 = new PlayerProfile();
+      PlayerProfile player = new PlayerProfile(selectedPokemon);
+
       System.out.println("\nLet's start your adventure with " + selectedPokemon.getName() + "!");
 
-      // player1.addCharmander();
-      // player1.displayName();
-      // player1.move1();
       menu.menuActions(selectedPokemon);
-      System.out.println("hmm");
-      System.out.println("sup");
+
+
+      // plyaer controls can be done this way now
+      player.getMove(1);
+      player.getName();
+>>>>>>> 78fc97bc8dc53d24db5f43b99ad200ab32e373c8
    }
 }

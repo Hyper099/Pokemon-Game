@@ -1,5 +1,7 @@
 import PokemonMoves.Moves;
 
+//CLASS FOR ALL POKEMON STATS
+
 class PokemonStats {
    private final String name;
    private final String type;
@@ -18,6 +20,9 @@ class PokemonStats {
       this.speed = speed;
       this.moves = moves;
    }
+
+   // USE THESE GETTERS TO GET DATA ABOUT A POKEMON FROM A OBJECT MADE FROM THIS
+   // CLASS(PokemonStats pokemon)
 
    public String getName() {
       return name;
