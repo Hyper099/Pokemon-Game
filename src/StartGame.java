@@ -7,7 +7,7 @@ public class StartGame {
       PokemonArray starters = new PokemonArray();
       String starterChoice;
       PokemonStats selectedPokemon = null;
-
+     
       System.out.println("Hi! Trainer, let us begin your journey!");
       System.out.println("Pick a starter Pokémon: ");
 
@@ -22,6 +22,7 @@ public class StartGame {
          for (PokemonStats pokemon : starters.pokemons) {
             if (starterChoice.equalsIgnoreCase(pokemon.getName())) {
                selectedPokemon = pokemon;
+               
                break;
             }
          }
@@ -34,5 +35,12 @@ public class StartGame {
          }
       }
       return selectedPokemon;
+   }
+   public PokemonStats ComputerPokemon(){
+
+      PokemonArray starters = new PokemonArray();
+      PokemonStats ComputerPokemon = starters.pokemons[1];
+
+      return ComputerPokemon;
    }
 }
