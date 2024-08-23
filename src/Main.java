@@ -13,5 +13,6 @@ public class Main {
       // player1.move1();
       menu.menuActions(selectedPokemon);
       System.out.println("hmm");
+      System.out.println("sup");
    }
 }
