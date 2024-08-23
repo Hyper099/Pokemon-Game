@@ -9,7 +9,9 @@ public class Main {
    public static void main(String[] args) {
 
       StartGame game = new StartGame();
+     
       PokemonStats selectedPokemon = game.selectStarterPokemon();
+      PokemonStats ComputerPokemon = game.ComputerPokemon();
       Menu menu = new Menu();
       PlayerProfile player = new PlayerProfile(selectedPokemon);
 
