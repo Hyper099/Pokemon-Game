@@ -1,3 +1,5 @@
+package PokemonMoves;
+
 public class Move {
    private final String name;
    private final int power;

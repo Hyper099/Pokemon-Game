@@ -1,3 +1,5 @@
+package PokemonMoves;
+
 public class Moves {
    private final Move[] moves;
 

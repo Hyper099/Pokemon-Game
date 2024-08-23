@@ -1,7 +1,7 @@
 package PokemonData;
 
 import PokemonMoves.FireMoves;
-import PokemonMoves.MainMoves;
+import PokemonMoves.Moves;
 
 public class Charmander {
 
@@ -11,24 +11,21 @@ public class Charmander {
     public int Attack = 30;
     public int Defence = 20;
     public int Speed = 25;
-    public MainMoves Move1, Move2, Move3, Move4;
+    public Moves Moves;
 
     public Charmander() {
-
-        FireMoves CharmanderMoves = new FireMoves();
-
-        this.Move1 = CharmanderMoves.moves[0];
-        this.Move2 = CharmanderMoves.moves[1];
-        this.Move3 = CharmanderMoves.moves[2];
-        this.Move4 = CharmanderMoves.moves[3];
-
+        this.Moves = new Moves(
+                FireMoves.Ember,
+                FireMoves.Scratch,
+                FireMoves.Growl,
+                FireMoves.Fire_fang);
     }
 
     public String getName() {
         return Name;
     }
 
-    public MainMoves getMoves() {
-        return Move1;
+    public Moves getMoves() {
+        return Moves;
     }
 }

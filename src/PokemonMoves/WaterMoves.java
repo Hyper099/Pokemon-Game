@@ -1,12 +1,8 @@
 package PokemonMoves;
 
 public class WaterMoves {
-    public MainMoves[] moves = new MainMoves[4];
-
-    public WaterMoves() {
-        moves[0] = new MainMoves("WaterGun", 45);
-        moves[1] = new MainMoves("Splash", 55);
-        moves[2] = new MainMoves("HydroPump", 120);
-        moves[3] = new MainMoves("AquaJet", 80);
-    }
+    public static final Move Water_gun = new Move("Water Gun", 40);
+    public static final Move Tail_whip = new Move("Tail Whip", 0);
+    public static final Move Bubble = new Move("Bubble", 40);
+    public static final Move Tackle = new Move("Tackle", 40);
 }

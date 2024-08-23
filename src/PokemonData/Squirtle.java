@@ -1,28 +1,28 @@
 package PokemonData;
 
+import PokemonMoves.Moves;
 import PokemonMoves.WaterMoves;
-import PokemonMoves.MainMoves;
 
 public class Squirtle {
-    
+
     public String Name = "Charmander";
-    String type = "Fire";
-    int HP= 100;
-    int Attack = 30;
-    int Defence = 20;
-    int Speed = 25;
-    MainMoves Move1, Move2,Move3,Move4;
+    public String type = "Fire";
+    public int HP = 100;
+    public int Attack = 30;
+    public int Defence = 20;
+    public int Speed = 25;
+    public Moves Moves;
 
-    public Squirtle(){
-        
+    public Squirtle() {
 
-        
-    WaterMoves SquirtleMoves = new WaterMoves();
+        this.Moves = new Moves(
+                WaterMoves.Water_gun,
+                WaterMoves.Tackle,
+                WaterMoves.Bubble,
+                WaterMoves.Tail_whip);
+    }
 
-    
-    this.Move1 = SquirtleMoves.moves[0];
-    this.Move2 = SquirtleMoves.moves[1];
-    this.Move3 = SquirtleMoves.moves[2];
-    this.Move4 = SquirtleMoves.moves[3];
+    public Moves getMoves() {
+        return Moves;
     }
 }

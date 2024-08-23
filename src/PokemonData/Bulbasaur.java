@@ -1,7 +1,7 @@
 package PokemonData;
 
-import PokemonMoves.GrassMoves; // Import GrassMoves from the correct package
-import PokemonMoves.MainMoves; // Import MainMoves from the correct package
+import PokemonMoves.GrassMoves;
+import PokemonMoves.Moves;
 
 public class Bulbasaur {
     public String Name = "Bulbasaur";
@@ -10,14 +10,18 @@ public class Bulbasaur {
     public int Attack = 20;
     public int Defence = 30;
     public int Speed = 35;
-    public MainMoves Move1, Move2, Move3, Move4;
+    public Moves Moves;
 
     public Bulbasaur() {
-        GrassMoves BulbasaurMoves = new GrassMoves();
-
-        this.Move1 = BulbasaurMoves.moves[0];
-        this.Move2 = BulbasaurMoves.moves[1];
-        this.Move3 = BulbasaurMoves.moves[2];
-        this.Move4 = BulbasaurMoves.moves[3];
+        this.Moves = new Moves(
+                GrassMoves.Vine_whip,
+                GrassMoves.Tackle,
+                GrassMoves.Leech_seed,
+                GrassMoves.Growl);
     }
+
+    public Moves getMoves() {
+        return Moves;
+    }
+
 }
