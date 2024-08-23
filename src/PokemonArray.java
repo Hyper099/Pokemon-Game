@@ -1,5 +1,6 @@
 import PokemonData.Bulbasaur;
 import PokemonData.Charmander;
+import PokemonData.PokemonStats;
 import PokemonData.Squirtle;
 import PokemonMoves.Moves;
 

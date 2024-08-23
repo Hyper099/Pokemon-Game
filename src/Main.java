@@ -1,3 +1,6 @@
+
+import PokemonData.PokemonStats;
+
 public class Main {
 
    // Notes:
@@ -14,10 +17,9 @@ public class Main {
 
       menu.menuActions(selectedPokemon);
 
-
       // plyaer controls can be done this way now
       player.getMove(1);
       player.getName();
->>>>>>> 78fc97bc8dc53d24db5f43b99ad200ab32e373c8
+
    }
 }

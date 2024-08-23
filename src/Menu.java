@@ -1,5 +1,7 @@
-import PokemonMoves.Move;
 import java.util.Scanner;
+
+import PokemonData.PokemonStats;
+import PokemonMoves.Move;
 
 public class Menu {
 

@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import PokemonData.PokemonStats;
+
 public class StartGame {
    private Scanner scanChoice = new Scanner(System.in);
 

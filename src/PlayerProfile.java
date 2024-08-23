@@ -1,3 +1,4 @@
+import PokemonData.PokemonStats;
 import PokemonMoves.Move;
 
 public class PlayerProfile {

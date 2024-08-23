@@ -1,8 +1,8 @@
+package PokemonData;
+
 import PokemonMoves.Moves;
 
-//CLASS FOR ALL POKEMON STATS
-
-class PokemonStats {
+public class PokemonStats {
    private final String name;
    private final String type;
    private final int hp;
