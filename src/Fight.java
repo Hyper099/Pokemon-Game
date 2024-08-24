@@ -47,7 +47,7 @@ public class Fight {
 
         boolean isPlaying = true;
         while (isPlaying) {
-            System.out.println("Select a move to attack: ");
+            System.out.println("Select a move to attack:");
 
             for (int i = 0; i < selectedPokemon.getMoves().getSize(); i++) {
                 Move move = selectedPokemon.getMoves().getMove(i);
@@ -77,8 +77,8 @@ public class Fight {
                     computerMove = computerPokemon.getMoves().getMove(computerMoveIndex).getName();
                     computerMovePower = computerPokemon.getMoves().getMove(computerMoveIndex).getPower();
                     
-            System.out.println(userMovePower);
-            System.out.println(computerMove);
+            //System.out.println(userMovePower);
+            //System.out.println(computerMove);
 
             //  fight logic (like attacking and checking HP) would go here, without level up feature
 
@@ -95,6 +95,18 @@ public class Fight {
 
                 computerPokemonHP -= damage;
 
+                //Now we check if hp is 0 or not
+                if (computerPokemonHP <= 0) {
+                    System.out.println(computerPokemon.getName() + " has fainted! You win!");
+                    isPlaying = false;
+                    
+    
+                } else {
+                    System.out.println(computerPokemon.getName() + "'s remaining HP: " + computerPokemonHP);
+    
+                }
+
+
                 //Now computer's turn
                 damage = (int)(0.5*computerMovePower* (computerPokemonAttack/playerPokemonDefence))+1;
 
@@ -103,9 +115,20 @@ public class Fight {
                 + computerPokemon.getMoves().getMove(computerMoveIndex).getName() + " for " + damage
                 + " damage!");
     
+                playerPokemonHP -= damage;
 
+                //We check if players hp is 0 or not
+                if(playerPokemonHP <=0){
+                    System.out.println(computerPokemon.getName() + " has fainted! You win!");
+                    isPlaying = false;
+    
+                }
+                else {
+                    System.out.println(selectedPokemon.getName() + "'s remaining HP: " + playerPokemonHP);
+                }
 
             }
+
 
 
             // if comp mon is faster , we jusr swap the attack order
@@ -124,6 +147,17 @@ public class Fight {
 
                 playerPokemonHP -= damage;
 
+                //check is player hp is 0 or not
+
+                if(playerPokemonHP <=0){
+                    System.out.println(computerPokemon.getName() + " has fainted! You win!");
+                    isPlaying = false;
+    
+                }
+                else {
+                    System.out.println(selectedPokemon.getName() + "'s remaining HP: " + playerPokemonHP);
+                }
+
                 //formula for calculation damage
 
                 damage = (int)(0.5*userMovePower* (playerPokemonAttack/computerPokemonDefence))+1; //cuz 0.5 will make it a double which will be an issue
@@ -134,61 +168,26 @@ public class Fight {
                 + " damage!");
 
                 computerPokemonHP -= damage;
+
+                //check if comp hp is 0 or not
+
+                if (computerPokemonHP <= 0) {
+                    System.out.println(computerPokemon.getName() + " has fainted! You win!");
+                    isPlaying = false;
+                    
+    
+                } else {
+                    System.out.println(computerPokemon.getName() + "'s remaining HP: " + computerPokemonHP);
+    
+                }
     
 
 
             }
 
-            
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
           
-            if (computerPokemonHP <= 0) {
-                System.out.println(computerPokemon.getName() + " has fainted! You win!");
-                isPlaying = false;
-                
 
-            } else {
-                System.out.println(computerPokemon.getName() + "'s remaining HP: " + computerPokemonHP);
-
-            }
-
-            if(playerPokemonHP <=0){
-                System.out.println(computerPokemon.getName() + " has fainted! You win!");
-                isPlaying = false;
-
-            }
-            else {
-                System.out.println(selectedPokemon.getName() + "'s remaining HP: " + playerPokemonHP);
-            }
           
         }
         scanMove.close();
