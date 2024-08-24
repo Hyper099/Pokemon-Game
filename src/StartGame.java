@@ -43,8 +43,8 @@ public class StartGame {
       Random random = new Random();
 
       PokemonArray starters = new PokemonArray();
-      int randomIndex = random.nextInt(starters.pokemons.length);
-      PokemonStats computerPokemon = starters.pokemons[randomIndex];
+     
+      PokemonStats computerPokemon = starters.pokemons[1];
 
       return computerPokemon;
    }
