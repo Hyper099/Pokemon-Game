@@ -5,8 +5,8 @@ import PokemonData.PokemonStats;
 import PokemonMoves.Move;
 
 public class Fight {
-    private final PokemonStats selectedPokemon; // The player's selected Pokémon
-    private final PokemonStats computerPokemon; // The computer's Pokémon
+    private  PokemonStats selectedPokemon; // The player's selected Pokémon
+    private  PokemonStats computerPokemon; // The computer's Pokémon
     private final Scanner scanMove = new Scanner(System.in); // Scanner to read user input for moves
     private final Random random = new Random(); // Random object for generating random moves for the computer
 
@@ -16,12 +16,20 @@ public class Fight {
         this.computerPokemon = computerPokemon;
     }
 
+        
+        
+
+
+
     // Method to fight
     public void fight() {
         int playerPokemonHP = selectedPokemon.getHP();
         int computerPokemonHP = computerPokemon.getHP();
 
         System.out.println("\n" + selectedPokemon.getName() + " V/S " + computerPokemon.getName() + "\n");
+
+        // Getting the level up requirments
+
 
         while (true) {
             int selectedMoveIndex = getUserMoveIndex();
@@ -35,6 +43,8 @@ public class Fight {
                         selectedMoveIndex);
                 if (computerPokemonHP <= 0) {
                     System.out.println(computerPokemon.getName() + " has fainted! You win!");
+                    LevelUpTech(selectedPokemon.getName(),selectedPokemon.getLevel(),selectedPokemon.getTotalExp(), selectedPokemon.getNextLvl(),computerPokemon.getExpGiven());
+
                     break;
                 }
                 playerPokemonHP = executeTurn(computerPokemon, selectedPokemon, computerMovePower, playerPokemonHP,
@@ -54,6 +64,7 @@ public class Fight {
                         selectedMoveIndex);
                 if (computerPokemonHP <= 0) {
                     System.out.println(computerPokemon.getName() + " has fainted! You win!");
+                    LevelUpTech(selectedPokemon.getName(),selectedPokemon.getLevel(),selectedPokemon.getTotalExp(), selectedPokemon.getNextLvl(),computerPokemon.getExpGiven());
                     break;
                 }
             }
@@ -97,6 +108,23 @@ public class Fight {
         } else {
             System.out.println(defender.getName() + "'s remaining HP: " + defenderHP);
             return defenderHP;
+        }
+    }
+
+    private int LevelUpTech(String playerPokemonName ,int playerPokemonLvl ,int playerPokemonTotalExp, int playerPokemonNextLvl ,int computerPokemonExpGiven){
+        int leftoverExp = computerPokemonExpGiven - playerPokemonNextLvl;
+
+        if(leftoverExp >= 0){
+            selectedPokemon.setLevel(playerPokemonLvl+1);
+            selectedPokemon.setNextLvl((playerPokemonNextLvl +3)- leftoverExp); 
+            System.out.println("Your "+ playerPokemonName+" gained "+ computerPokemonExpGiven+" exp");
+            System.out.println("Congratulations your " + playerPokemonName+ " has leveled up!, It's level is now " + selectedPokemon.getLevel());
+            return selectedPokemon.getLevel();
+        }
+        else{
+            selectedPokemon.setNextLvl(playerPokemonNextLvl + leftoverExp);
+            System.out.println("Your "+ playerPokemonName+" gained "+ computerPokemonExpGiven+" exp");
+            return selectedPokemon.getLevel();
         }
     }
 }
