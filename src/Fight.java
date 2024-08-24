@@ -8,7 +8,7 @@ public class Fight {
     private final PokemonStats selectedPokemon; // The player's selected Pokémon
     private final PokemonStats computerPokemon; // The computer's Pokémon
     private final Scanner scanMove = new Scanner(System.in); // Scanner to read user input for moves
-    private final Random compMove = new Random(); // Random object for generating random moves for the computer
+    private final Random random = new Random(); // Random object for generating random moves for the computer
 
     // Constructor to initialize the selected and computer Pokémon
     public Fight(PokemonStats selectedPokemon, PokemonStats computerPokemon) {
@@ -25,7 +25,7 @@ public class Fight {
 
         while (true) {
             int userMovePower = getUserMovePower();
-            int computerMoveIndex = compMove.nextInt(computerPokemon.getMoves().getSize());
+            int computerMoveIndex = random.nextInt(computerPokemon.getMoves().getSize());
             int computerMovePower = computerPokemon.getMoves().getMove(computerMoveIndex).getPower();
 
             if (selectedPokemon.getSpeed() > computerPokemon.getSpeed()) {
@@ -78,8 +78,10 @@ public class Fight {
         int damage = (int) (0.5 * movePower * (attack / defense)) + 1;
 
         System.out.println(attacker.getName() + " attacks " + defender.getName() + " with " +
-                attacker.getMoves().getMove(compMove.nextInt(attacker.getMoves().getSize())).getName() +
-                " for " + damage + " damage!");
+
+                attacker.getMoves().getMove(random.nextInt(attacker.getMoves().getSize())).getName()
+
+                + " for " + damage + " damage!");
 
         defenderHP -= damage;
 

@@ -5,6 +5,7 @@ import PokemonData.PokemonStats;
 
 public class StartGame {
    private final Scanner scanChoice = new Scanner(System.in);
+   private final Random random = new Random();
 
    public PokemonStats selectStarterPokemon() {
       PokemonArray starters = new PokemonArray();
@@ -40,11 +41,11 @@ public class StartGame {
    }
 
    public PokemonStats getComputerPokemon() {
-      Random random = new Random();
 
       PokemonArray starters = new PokemonArray();
-     
-      PokemonStats computerPokemon = starters.pokemons[1];
+
+      int computerPokemonIndex = random.nextInt(starters.pokemons.length);
+      PokemonStats computerPokemon = starters.pokemons[computerPokemonIndex];
 
       return computerPokemon;
    }
