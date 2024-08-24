@@ -1,7 +1,7 @@
-import PokemonData.Bulbasaur;
-import PokemonData.Charmander;
 import PokemonData.PokemonStats;
-import PokemonData.Squirtle;
+import PokemonData.FireTypePokemon.Charmander;
+import PokemonData.GrassTypePokemon.Bulbasaur;
+import PokemonData.WaterTypePokemon.Squirtle;
 
 class PokemonArray {
       public PokemonStats[] pokemons = new PokemonStats[3];
