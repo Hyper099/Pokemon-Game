@@ -60,9 +60,7 @@ public class PokemonStats {
       return level;
    }
 
-   public int getLevel() {
-      return level;
-   }
+
 
    public int getTotalExp() {
       return totalExp;

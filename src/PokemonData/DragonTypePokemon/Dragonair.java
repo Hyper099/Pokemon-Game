@@ -8,8 +8,8 @@ public class Dragonair extends PokemonStats {
    public Dragonair() {
       super("Dragonair", "Dragon", 160, 45, 50, 70, 14, 90, 40, 50, new Moves(
             DragonMoves.Dragon_breath,
-            DragonMoves.Thunder_wave,
-            DragonMoves.Aqua_tail,
-            DragonMoves.Slam));
+            DragonMoves.Dragon_claw,
+            DragonMoves.Dragon_pulse,
+            DragonMoves.Dragon_tail));
    }
 }
