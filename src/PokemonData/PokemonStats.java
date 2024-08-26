@@ -56,10 +56,11 @@ public class PokemonStats {
    public int getSpeed() {
       return speed;
    }
-
    public int getLevel() {
       return level;
    }
+
+
 
    public int getTotalExp() {
       return totalExp;
