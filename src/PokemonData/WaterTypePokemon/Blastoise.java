@@ -11,6 +11,6 @@ public class Blastoise extends PokemonStats {
             WaterMoves.Hydro_pump,
             WaterMoves.Surf,
             IceMoves.Ice_beam,
-            WaterMoves.Bite));
+            WaterMoves.Surf));
    }
 }

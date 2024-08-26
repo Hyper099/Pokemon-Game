@@ -9,7 +9,7 @@ public class Kadabra extends PokemonStats {
       super("Kadabra", "Psychic", 110, 25, 15, 120, 17, 90, 30, 50, new Moves(
             PsychicMoves.Psybeam,
             PsychicMoves.Confusion,
-            PsychicMoves.Reflect,
+            PsychicMoves.Psychic,
             PsychicMoves.Psychic));
    }
 }

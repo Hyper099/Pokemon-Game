@@ -9,7 +9,8 @@ public class Charmeleon extends PokemonStats {
       super("Charmeleon", "Fire", 140, 40, 30, 55, 8, 100, 30, 50, new Moves(
             FireMoves.Flamethrower,
             FireMoves.Scratch,
-            FireMoves.Slash,
-            FireMoves.Smokescreen));
+            FireMoves.Flamethrower,
+            FireMoves.Scratch
+            ));
    }
 }

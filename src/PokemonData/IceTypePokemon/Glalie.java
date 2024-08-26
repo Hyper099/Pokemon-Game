@@ -10,8 +10,8 @@ public class Glalie extends PokemonStats {
             50, 70, 12, 90, 40, 60,
             new Moves(
                   IceMoves.Ice_beam,
-                  IceMoves.Headbutt,
-                  IceMoves.Dark_pulse,
+                  IceMoves.Ice_shard,
+                  IceMoves.Ice_shard,
                   IceMoves.Frost_breath));
    }
 }

@@ -8,8 +8,9 @@ public class Gastly extends PokemonStats {
     public Gastly() {
         super("Gastly", "Ghost", 90, 20, 15, 80, 12, 60, 15, 20, new Moves(
                 GhostMoves.Lick,
-                GhostMoves.Confuse_ray,
-                GhostMoves.Hypnosis,
+                GhostMoves.Lick,
+                GhostMoves.Lick,
+                
                 GhostMoves.Night_shade));
     }
 }

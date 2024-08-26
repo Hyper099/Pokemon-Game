@@ -8,8 +8,8 @@ public class Snorunt extends PokemonStats {
    public Snorunt() {
       super("Snorunt", "Ice", 100, 20, 30, 50, 10, 60, 20, 30, new Moves(
             IceMoves.Ice_shard,
-            IceMoves.Headbutt,
-            IceMoves.Protect,
+            IceMoves.Ice_shard,
+            IceMoves.Ice_shard,
             IceMoves.Blizzard));
    }
 }
