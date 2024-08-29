@@ -9,8 +9,8 @@ public class Froslass extends PokemonStats {
       super("Froslass", "Ice", 120, 35, 45, 110, 18, 90, 50, 80,
             new Moves(
                   IceMoves.Ice_shard,
-                  IceMoves.Destiny_bond,
-                  IceMoves.Shadow_ball,
+                  IceMoves.Ice_shard,
+                  IceMoves.Ice_shard,
                   IceMoves.Hail));
    }
 }

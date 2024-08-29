@@ -9,7 +9,8 @@ public class Machamp extends PokemonStats {
       super("Machamp", "Fighting", 220, 55, 50, 55, 12, 150, 70, 80, new Moves(
             FightingMoves.Dynamic_punch,
             FightingMoves.Karate_chop,
-            FightingMoves.Seismic_toss,
+            FightingMoves.Karate_chop,
+            
             FightingMoves.Bulk_up));
    }
 }

@@ -11,6 +11,6 @@ public class Charizard extends PokemonStats {
             FireMoves.Fire_blast,
             FireMoves.Flamethrower,
             FlyingMoves.Wing_attack,
-            FireMoves.Slash));
+            FireMoves.Flame_wheel));
    }
 }

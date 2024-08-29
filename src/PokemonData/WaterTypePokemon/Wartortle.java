@@ -9,7 +9,7 @@ public class Wartortle extends PokemonStats {
       super("Wartortle", "Water", 150, 35, 40, 45, 9, 100, 40, 50, new Moves(
             WaterMoves.Bubble_beam,
             WaterMoves.Tackle,
-            WaterMoves.Bite,
-            WaterMoves.Rapid_spin));
+            WaterMoves.Surf,
+            WaterMoves.Surf));
    }
 }
