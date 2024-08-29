@@ -4,60 +4,72 @@ import java.util.Scanner;
 
 public class Menu {
 
-   // Add all the menu actions in this list
-   String[] actions = new String[] { "Fight", "Display Pokemon Info", "Exit" };
+    // List of menu actions
+    String[] actions = new String[]{"Fight", "Display Pokémon Info", "Exit"};
 
-   private final Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
-   public void displayMenu() {
-      System.out.println("\nDisplaying available actions in the menu:");
-      for (int i = 0; i < actions.length; i++) {
-         System.out.println((i + 1) + ". " + actions[i]);
-      }
-   }
+    // Display available menu actions
+    public void displayMenu() {
+        System.out.println("\nDisplaying available actions in the menu:");
+        for (int i = 0; i < actions.length; i++) {
+            System.out.println((i + 1) + ". " + actions[i]);
+        }
+    }
 
-   public int getChoice() {
-      return scanner.nextInt();
-   }
+    // Get user's menu choice
+    public int getChoice() {
+        return scanner.nextInt();
+    }
 
-   public void menuActions(PokemonStats selectedPokemon, PokemonStats computerPokemon) {
+    // Perform actions based on user's choice
+    public void menuActions(PlayerProfile playerProfile, PokemonStats computerPokemon) {
 
-      displayMenu();
+        displayMenu();
 
-      System.out.print("Select your action (select index): ");
+        System.out.print("Select your action (select index): ");
 
-      switch (getChoice()) {
-         case 1 -> {
-            System.out.println("Commencing fight.");
-            Fight fight = new Fight(selectedPokemon, computerPokemon);
-            fight.fight();
-         }
-         case 2 -> {
-            System.out.println("\nYou chose to display Pokémon info\n");
-            System.out.println("Displaying selected Pokémon info:");
-            System.out.println("Name: " + selectedPokemon.getName());
-            System.out.println("Type: " + selectedPokemon.getType());
-            System.out.println("HP: " + selectedPokemon.getHP());
-            System.out.println("Attack: " + selectedPokemon.getAttack());
-            System.out.println("Defense: " + selectedPokemon.getDefense());
-            System.out.println("Speed: " + selectedPokemon.getSpeed());
-            System.out.println("Moves:");
-
-            for (int i = 0; i < selectedPokemon.getMoves().getSize(); i++) {
-               Move move = selectedPokemon.getMoves().getMove(i);
-               System.out.println((i + 1) + ": " + move.getName() + " (Power: " + move.getPower() + ")");
+        switch (getChoice()) {
+            case 1 -> {
+                System.out.println("Commencing fight.");
+                Fight fight = new Fight(playerProfile, computerPokemon);
+                fight.fight();
             }
-            menuActions(selectedPokemon, computerPokemon);
+            case 2 -> {
+                System.out.println("\nYou chose to display Pokémon info\n");
 
-         }
-         case 3 -> {
-            System.out.println("Exiting the game.");
+                // Assuming we display info for the first Pokémon in the player's team
+                PokemonStats selectedPokemon = playerProfile.getActivePokemon();
+                
+                if (selectedPokemon != null) {
+                    System.out.println("Displaying selected Pokémon info:");
+                    System.out.println("Name: " + selectedPokemon.getName());
+                    System.out.println("Type: " + selectedPokemon.getType());
+                    System.out.println("HP: " + selectedPokemon.getHP());
+                    System.out.println("Attack: " + selectedPokemon.getAttack());
+                    System.out.println("Defense: " + selectedPokemon.getDefense());
+                    System.out.println("Speed: " + selectedPokemon.getSpeed());
+                    System.out.println("Moves:");
 
-         }
-         default -> {
-            System.out.println("Invalid choice! Try again.");
-            menuActions(selectedPokemon, computerPokemon);
-         }
-      }
-   }
+                    for (int i = 0; i < selectedPokemon.getMoves().getSize(); i++) {
+                        Move move = selectedPokemon.getMoves().getMove(i);
+                        System.out.println((i + 1) + ": " + move.getName() + " (Power: " + move.getPower() + ")");
+                    }
+                } else {
+                    System.out.println("No Pokémon available in the team.");
+                }
+                // Display the menu again after showing Pokémon info
+                menuActions(playerProfile, computerPokemon);
+
+            }
+            case 3 -> {
+                System.out.println("Exiting the game.");
+                // Handle any cleanup if necessary
+            }
+            default -> {
+                System.out.println("Invalid choice! Try again.");
+                menuActions(playerProfile, computerPokemon);
+            }
+        }
+    }
 }
